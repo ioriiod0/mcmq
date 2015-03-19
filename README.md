@@ -7,8 +7,8 @@
     format:  push [channel] [size]\r\n[body]
     example: push asdf 2\r\naa
     return:
-             [channel] ok
-             [channel] err [err msg]
+             [channel] ok\r\n
+             [channel] err [err msg]\r\n
 
 ####pull
     
@@ -20,7 +20,7 @@
              pull asdf 5\r\n
     return:
             [channel] msg [id] [timestramp] [size]\r\n[body]
-            [channel] err [err msg]
+            [channel] err [err msg]\r\n
 
 
 ####commit
@@ -28,11 +28,11 @@
     commit a msg on a channel,so we can safely remove a msg from channel.
 
     format: commit [channel]\r\n
-    example: commit asdf
+    example: commit asdf\r\n
 
     return:
-            [channel] ok
-            [channel] err [err msg]
+            [channel] ok\r\n
+            [channel] err [err msg]\r\n
     
 
 
