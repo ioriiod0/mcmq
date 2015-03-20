@@ -139,6 +139,16 @@ LOOP:
         case r := <-c.PullCh:
             if msg,err := c.pull();err != nil {
                 r.ErrCh <- err
+            } else if msg == nil {
+
+                select {
+                case r := <- c.PullCh:
+
+                case r := <-Quit:
+
+                case <- time.After()
+                }
+
             } else {
                 r.MsgCh <- msg
             }
